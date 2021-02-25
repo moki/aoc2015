@@ -24,17 +24,30 @@ class day_01_test(unittest.TestCase):
 
         input = read_input("day/day_01/input/part_1")
         output = part_1(input)
-        print("\npart_1 input:\n")
-        print("\n", input, "\n")
-        print("\noutput:\n")
-        print("\n", output, "\n")
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)
 
     def test_part_2(self):
+        inputs = [")", "()())"]
+        outputs = [1, 5]
+
+        cases = zip(inputs, outputs)
+
+        for case in cases:
+            self.assertEqual(part_2(case[0]), case[1])
+
         if not INPUT:
             return
 
         input = read_input("day/day_01/input/part_2")
+        output = part_2(input)
 
-        r = part_2(input)
-
-        self.assertEqual(r, "solution_2")
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)

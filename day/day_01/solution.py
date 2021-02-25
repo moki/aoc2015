@@ -7,5 +7,15 @@ def part_1(input):
     return floor
 
 def part_2(input):
-    print(input)
-    return "solution_2"
+    counter = 0
+    floor = 0
+
+    for c in input:
+        counter = counter + 1
+
+        floor += 1 if c == '(' else -1 if c == ')' else 0
+
+        if floor == -1:
+            break
+
+    return counter
