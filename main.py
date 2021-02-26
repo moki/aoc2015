@@ -162,3 +162,16 @@ class day_04_test(unittest.TestCase):
         print(input)
         print("output")
         print(output)
+
+    def test_part_2(self):
+        if not INPUT:
+            return
+
+        input = read_input("day/day_04/input/part_1")
+        output = day_4_part_2(input)
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)
