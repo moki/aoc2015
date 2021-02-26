@@ -120,3 +120,25 @@ class day_03_test(unittest.TestCase):
         print(input)
         print("output")
         print(output)
+
+    def test_part_2(self):
+        inputs = ["^>", "^>v<", "^v^v^v^v^v"]
+        outputs = [3, 3, 11]
+
+
+        cases = zip(inputs, outputs)
+
+        for case in cases:
+            self.assertEqual(day_3_part_2(case[0]), case[1])
+
+        if not INPUT:
+            return
+
+        input = read_input("day/day_03/input/part_2")
+        output = day_3_part_2(input)
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)
