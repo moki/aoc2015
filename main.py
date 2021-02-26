@@ -4,6 +4,7 @@ import os
 from day.day_01.solution import part_1 as day_1_part_1, part_2 as day_1_part_2
 from day.day_02.solution import part_1 as day_2_part_1, part_2 as day_2_part_2
 from day.day_03.solution import part_1 as day_3_part_1, part_2 as day_3_part_2
+from day.day_04.solution import part_1 as day_4_part_1, part_2 as day_4_part_2
 
 INPUT = os.environ["INPUT"]
 
@@ -104,8 +105,6 @@ class day_03_test(unittest.TestCase):
 
         cases = zip(inputs, outputs)
 
-        day_3_part_1(read_input("day/day_03/input/part_1"))
-
         for case in cases:
             self.assertEqual(day_3_part_1(case[0]), case[1])
 
@@ -125,7 +124,6 @@ class day_03_test(unittest.TestCase):
         inputs = ["^>", "^>v<", "^v^v^v^v^v"]
         outputs = [3, 3, 11]
 
-
         cases = zip(inputs, outputs)
 
         for case in cases:
@@ -136,6 +134,28 @@ class day_03_test(unittest.TestCase):
 
         input = read_input("day/day_03/input/part_2")
         output = day_3_part_2(input)
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)
+
+class day_04_test(unittest.TestCase):
+    def test_part_1(self):
+        inputs = ["abcdef", "pqrstuv"]
+        outputs = [609043, 1048970]
+
+        cases = zip(inputs, outputs)
+
+        for case in cases:
+            self.assertEqual(day_4_part_1(case[0]), case[1])
+
+        if not INPUT:
+            return
+
+        input = read_input("day/day_04/input/part_1")
+        output = day_4_part_1(input)
 
         print("\n")
         print("input")
