@@ -217,3 +217,35 @@ class day_05_test(unittest.TestCase):
         print(input)
         print("output")
         print(output)
+
+    def test_part_2(self):
+        inputs = [
+                "qjhvhtzxzqqjkmpb",
+                "xxyxx",
+                "uurcxstgmygtbstg",
+                "ieodomkazucvgmuy"
+        ]
+
+        outputs = [
+            1,
+            1,
+            0,
+            0
+        ]
+
+        cases = zip(inputs, outputs)
+
+        for case in cases:
+            self.assertEqual(day_5_part_2(case[0]), case[1])
+
+        if not INPUT:
+            return
+
+        input = read_input("day/day_05/input/part_1")
+        output = day_5_part_2(input)
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)
