@@ -1,5 +1,6 @@
 from functools import reduce
 
+
 def part_1(input):
     lines = input.split("\n")
     paper = 0
@@ -17,6 +18,7 @@ def part_1(input):
         paper += reduce(lambda a, b: a + b * 2, sides, 0) + m
 
     return paper
+
 
 def part_2(input):
     lines = input.split("\n")

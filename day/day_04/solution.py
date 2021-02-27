@@ -1,7 +1,8 @@
 from hashlib import md5
 from itertools import count
 
-def part_1(input, zeroes = 5):
+
+def part_1(input, zeroes=5):
     input = input.strip()
     target = "0" * zeroes
 
@@ -14,6 +15,7 @@ def part_1(input, zeroes = 5):
             return i
 
     return 0
+
 
 def part_2(input):
     return part_1(input, 6)

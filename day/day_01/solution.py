@@ -6,6 +6,7 @@ def part_1(input):
 
     return floor
 
+
 def part_2(input):
     counter = 0
     floor = 0

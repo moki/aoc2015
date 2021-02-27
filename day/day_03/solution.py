@@ -1,17 +1,11 @@
 def _hash(x, y):
-    return hash(str(x) + ","+ str(y))
+    return hash(str(x) + "," + str(y))
+
 
 def part_1(input):
     x, y = 0, 0
 
-    counter = 0
-
-    move_map = {
-        "^": (0,1),
-        ">": (1,0),
-        "<": (-1,0),
-        "v": (0,-1)
-    }
+    move_map = {"^": (0, 1), ">": (1, 0), "<": (-1, 0), "v": (0, -1)}
 
     house_map = dict()
 
@@ -23,22 +17,16 @@ def part_1(input):
         x += _x
         y += _y
 
-        e = house_map.get(_hash(x,y))
-
-        house_map[_hash(x,y)] = 1
+        house_map[_hash(x, y)] = 1
 
     return len(house_map)
+
 
 def part_2(input):
     hx, hy = 0, 0
     rx, ry = 0, 0
 
-    move_map = {
-        "^": (0,1),
-        ">": (1,0),
-        "<": (-1,0),
-        "v": (0,-1)
-    }
+    move_map = {"^": (0, 1), ">": (1, 0), "<": (-1, 0), "v": (0, -1)}
 
     house_map = dict()
 

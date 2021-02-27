@@ -9,9 +9,11 @@ from day.day_05.solution import part_1 as day_5_part_1, part_2 as day_5_part_2
 
 INPUT = os.environ["INPUT"]
 
+
 def read_input(path):
     with open(path, "r") as f:
         return f.read()
+
 
 class day_01_test(unittest.TestCase):
     def test_part_1(self):
@@ -56,6 +58,7 @@ class day_01_test(unittest.TestCase):
         print("output")
         print(output)
 
+
 class day_02_test(unittest.TestCase):
     def test_part_1(self):
         inputs = ["2x3x4", "1x1x10"]
@@ -98,6 +101,7 @@ class day_02_test(unittest.TestCase):
         print(input)
         print("output")
         print(output)
+
 
 class day_03_test(unittest.TestCase):
     def test_part_1(self):
@@ -142,6 +146,7 @@ class day_03_test(unittest.TestCase):
         print("output")
         print(output)
 
+
 class day_04_test(unittest.TestCase):
     def test_part_1(self):
         inputs = ["abcdef", "pqrstuv"]
@@ -177,29 +182,15 @@ class day_04_test(unittest.TestCase):
         print("output")
         print(output)
 
+
 class day_05_test(unittest.TestCase):
     def test_part_1(self):
         inputs = [
-                "aeixx",
-                "xazddegov",
-                "aeddioullaeiouzzaeiou",
-                "ugknbfddgicrmopn",
-                "aaa",
-                "haegwjzuvuyypxyu",
-                "jchzalrnumimnmhp",
-                "dvszwmarrgswjxmb"
+            "aeixx", "xazddegov", "aeddioullaeiouzzaeiou", "ugknbfddgicrmopn",
+            "aaa", "haegwjzuvuyypxyu", "jchzalrnumimnmhp", "dvszwmarrgswjxmb"
         ]
 
-        outputs = [
-            1,
-            1,
-            1,
-            1,
-            1,
-            0,
-            0,
-            0
-        ]
+        outputs = [1, 1, 1, 1, 1, 0, 0, 0]
 
         cases = zip(inputs, outputs)
 
@@ -220,18 +211,10 @@ class day_05_test(unittest.TestCase):
 
     def test_part_2(self):
         inputs = [
-                "qjhvhtzxzqqjkmpb",
-                "xxyxx",
-                "uurcxstgmygtbstg",
-                "ieodomkazucvgmuy"
+            "qjhvhtzxzqqjkmpb", "xxyxx", "uurcxstgmygtbstg", "ieodomkazucvgmuy"
         ]
 
-        outputs = [
-            1,
-            1,
-            0,
-            0
-        ]
+        outputs = [1, 1, 0, 0]
 
         cases = zip(inputs, outputs)
 
