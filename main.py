@@ -239,11 +239,11 @@ class day_06_test(unittest.TestCase):
     def test_part_1(self):
 
         inputs = [
-            "turn on 0,0 through 999,999", "toggle 0,0 through 999,0",
-            "turn off 499,499 through 500,500"
+            "turn on 0,0 through 999,999",
+            "toggle 0,0 through 999,0",
         ]
 
-        outputs = [1000 * 1000, 1000, 4]
+        outputs = [1000 * 1000, 1000]
 
         #        inputs = ["turn on 4,4 through 5,5"]
         #        outputs = [4]
@@ -266,5 +266,23 @@ class day_06_test(unittest.TestCase):
         print(output)
 
     def test_part_2(self):
+        inputs = ["turn on 0,0 through 0,0", "toggle 0,0 through 999,999"]
+
+        outputs = [1, 2000000]
+
+        cases = zip(inputs, outputs)
+
+        for case in cases:
+            self.assertEqual(day_6_part_2(case[0]), case[1])
+
         if not INPUT:
             return
+
+        input = read_input("day/day_06/input/part_1")
+        output = day_6_part_2(input)
+
+        print("\n")
+        print("input")
+        print(input)
+        print("output")
+        print(output)

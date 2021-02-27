@@ -37,6 +37,17 @@ def grid_count_lights(grid):
     return counter
 
 
+def grid_count_brightness(grid):
+    counter = 0
+
+    for row in grid:
+        for col in row:
+            if col:
+                counter += col
+
+    return counter
+
+
 def part_1(input):
     grid = [[0 for j in range(M)] for i in range(N)]
 
@@ -82,4 +93,45 @@ def part_1(input):
 
 
 def part_2(input):
-    return input
+    grid = [[0 for j in range(M)] for i in range(N)]
+
+    def toggle(grid, x, y):
+        return grid[x][y] + 2
+
+    def turn_on(grid, x, y):
+        return grid[x][y] + 1
+
+    def turn_off(grid, x, y):
+        brightness = grid[x][y] - 1
+        return brightness if brightness > 0 else 0
+
+    def id(grid, x, y):
+        return grid[x][y]
+
+    for command in input.split("\n"):
+        if not len(command):
+            continue
+
+        _command = command.strip().split()
+
+        cmd_i = 0
+        from_xy_i = 0
+        to_xy_i = 0
+
+        if len(_command) == 5:
+            cmd_i = 1
+            from_xy_i = 2
+            to_xy_i = 4
+        else:
+            from_xy_i = 1
+            to_xy_i = 3
+
+        cmd = _command[cmd_i]
+        from_x, from_y = _command[from_xy_i].split(",")
+        to_x, to_y = _command[to_xy_i].split(",")
+
+        fn = {"toggle": toggle, "on": turn_on, "off": turn_off}.get(cmd, id)
+
+        grid_apply(grid, fn, int(from_x), int(from_y), int(to_x), int(to_y))
+
+    return grid_count_brightness(grid)
